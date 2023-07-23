@@ -11,22 +11,22 @@ function Navbar() {
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
-        if (window.innerWidth<= 960) {
+        if (window.innerWidth <= 960) {
             setButton(false);
         } else {
             setButton(true);
         }
     }
 
-    useEffect(()=> {
-            showButton()
-        }, []) 
+    useEffect(() => {
+        showButton()
+    }, [])
 
-            window.addEventListener('resize', showButton);
-        
+    window.addEventListener('resize', showButton);
 
 
-        return (<>
+    return (
+        <>
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo'
@@ -46,33 +46,34 @@ function Navbar() {
                         <li className='nav-item'>
                             <Link to='/' className='nav-links'
                                 onClick={closeMobileMenu}>
-                                Home
+                                About Me
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/services' className='nav-links'
+                            <Link to='/projects' className='nav-links'
                                 onClick={closeMobileMenu}>
-                                Services
+                                Projects
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-links'
+                            <Link to='/skills' className='nav-links'
                                 onClick={closeMobileMenu}>
-                                Products
+                                Skills
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links-mobile'
+                            <Link to='/contact' className='nav-links-mobile'
                                 onClick={closeMobileMenu}>
-                                Sign Up
+                                Contact
                             </Link>
                         </li>
                     </ul>
                     {
-                    button && <Button buttonStyle='btn--outline'>Sign Up</Button>
+                    button && <Button buttonStyle='btn--outline'>Contact</Button>
                 } </div>
             </nav>
-        </>)
-    }
+        </>
+    )
+}
 
-    export default Navbar
+export default Navbar
